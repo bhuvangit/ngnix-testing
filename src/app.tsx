@@ -1,27 +1,14 @@
-import axios from 'axios';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Dummy from './dummy';
 
 const App = (): JSX.Element => {
-    const jsonApi = (): void => {
-        axios.get('https://jsonplaceholder.typicode.com/todos');
-    };
-
-    const getState = (): void => {
-        axios.get(
-            `https://ezzt7okgyl.execute-api.ap-south-1.amazonaws.com/Prod/api/StateMaster/GetAll`
-        );
-    };
-
     return (
-        <div
-            style={{
-                height: '100vh',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-            }}>
-            <button onClick={jsonApi}>Json place holder</button>
-            <button onClick={getState}>state </button>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Dummy />} />
+            </Routes>
+        </BrowserRouter>
     );
 };
 
