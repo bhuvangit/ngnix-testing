@@ -1,0 +1,92 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:import/recommended",
+        "plugin:react-hooks/recommended",
+        // "airbnb",
+        "airbnb-typescript",
+        "prettier"
+    ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        },
+        "react": {
+            "pragma": "React",
+            "version": "detect"
+        }
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+    },
+    "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ],
+        "react/react-in-jsx-scope": "off",
+        "react-hooks/rules-of-hooks": ["error"],
+        "@typescript-eslint/no-unused-vars": ["error"],
+        "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+        "react/jsx-filename-extension": ["off", { "extensions": [".js", ".jsx"] }],
+        "import/no-unresolved": [2, { "caseSensitive": false }],
+        "react/display-name": ["error", { "ignoreTranspilerName": true }],
+        "react/prop-types": ["error"],
+        "react/function-component-definition": [
+            2,
+            {
+                "namedComponents": "arrow-function"
+            }
+        ],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        "@typescript-eslint/explicit-function-return-type": ["error"],
+        "@typescript-eslint/typedef": [
+            "error",
+            {
+                "arrayDestructuring": false,
+                "arrowCallSignature": true,
+                "allowExpressions": true,
+                "callSignature": true,
+                "memberVariableDeclaration": true,
+                // "arrowParameter": true,
+                "propertyDeclaration": true,
+                "objectDestructuring": false,
+                "variableDeclaration": true,
+                "variableDeclarationIgnoreFunction": true
+            }
+        ],
+        "react/require-default-props": [
+            "error"
+            // {
+            //     "forbidDefaultForRequired": false,
+            //     "functions": "defaultProps"
+            // }
+        ]
+    },
+    "root": true
+}
